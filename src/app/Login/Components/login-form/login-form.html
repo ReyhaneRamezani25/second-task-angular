@@ -1,0 +1,36 @@
+<div class="login-container">
+    <div class="login-card">
+        <div class="login-header">
+            <img src="assets/user.png" alt="User">
+            <h1>ورود به سیستم</h1>
+        </div>
+
+        <form (ngSubmit)="checkEmailAndPass()">
+            <div class="form-group">
+                <img src="assets/email.png" alt="Email">
+                <input
+                    type="email"
+                    placeholder="ایمیل شما"
+                    name="email"
+                    [(ngModel)]="email"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <img src="assets/password.png" alt="Password">
+                <input
+                    type="password"
+                    placeholder="رمز عبور شما"
+                    name="password"
+                    [(ngModel)]="password"
+                    required>
+            </div>
+
+            <button type="submit" class="enetr-btn">ورود</button>
+        </form>
+        @if (resultAfterCheck !== "") {
+            <p class="error-message">{{ resultAfterCheck  }}</p>
+        }
+
+    </div>
+</div>

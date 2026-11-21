@@ -1,0 +1,30 @@
+<div class="header-container">
+
+  <div class="top-section">
+    <h1>فهرست کاربران</h1>
+
+    @if (role === 'admin') {
+      <button class="add-user-btn">
+        اضافه کردن کاربر جدید
+      </button>
+    }
+  </div>
+
+  <div class="filter-section">
+    <div class="role-filter">
+      <select (change)="onSelectedRoleChange($event)">
+        <option value="">همه نقش‌ها</option>
+        <option value="admin">مدیر سیستم</option>
+        <option value="user">کاربر عادی</option>
+        <option value="operator">اپراتور</option>
+      </select>
+    </div>
+
+    <div class="search-box">
+      <input type="text" placeholder="جستجوی کاربر (نام، ایمیل)">
+    </div>
+
+
+  </div>
+
+</div>

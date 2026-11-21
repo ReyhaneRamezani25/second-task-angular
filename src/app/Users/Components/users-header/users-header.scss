@@ -1,0 +1,139 @@
+.header-container {
+  width: 100%;
+  margin-bottom: 30px;
+
+  .top-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    min-height: 45px;
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 700;
+      color: #5a1660;
+      text-align: center;
+    }
+
+    .add-user-btn {
+      position: absolute;
+      left: 0;
+
+      padding: 12px 22px;
+      border: none;
+      border-radius: 10px;
+
+      background: linear-gradient(135deg, #a17aff, #8755f5);
+      color: white;
+
+      font-size: 14px;
+      font-weight: 600;
+      font-family: inherit;
+
+      cursor: pointer;
+      white-space: nowrap;
+      transition: 0.3s;
+
+      &:hover {
+        background: linear-gradient(135deg, #8755f5, #7040dc);
+        box-shadow: 0 5px 15px rgba(135, 85, 245, 0.3);
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  .filter-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    .search-box {
+      width: 350px;
+
+      input {
+        width: 100%;
+        padding: 13px 18px;
+        box-sizing: border-box;
+
+        direction: rtl;
+        text-align: right;
+
+        border: 1px solid #e4dcf7;
+        border-radius: 10px;
+        outline: none;
+
+        background: #faf8ff;
+        color: #333;
+        font-size: 14px;
+        font-family: inherit;
+        transition: 0.3s;
+
+        &::placeholder {
+          color: #a49ab8;
+        }
+
+        &:focus {
+          border-color: #8755f5;
+          background: #fff;
+          box-shadow: 0 0 0 3px rgba(135, 85, 245, 0.12);
+        }
+      }
+    }
+
+    .role-filter {
+      width: 180px;
+
+      select {
+        width: 100%;
+        padding: 13px 15px;
+        box-sizing: border-box;
+
+        direction: rtl;
+        text-align: center;
+
+        border: 1px solid #e4dcf7;
+        border-radius: 10px;
+        outline: none;
+
+        background: #faf8ff;
+        color: #333;
+        font-size: 14px;
+        font-family: inherit;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:focus {
+          border-color: #8755f5;
+          background: #fff;
+          box-shadow: 0 0 0 3px rgba(135, 85, 245, 0.12);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .header-container {
+    .top-section {
+      padding-top: 55px;
+
+      .add-user-btn {
+        top: 0;
+        left: 0;
+      }
+    }
+
+    .filter-section {
+      flex-direction: column;
+
+      .search-box,
+      .role-filter {
+        width: 100%;
+      }
+    }
+  }
+}
