@@ -4,9 +4,11 @@
     <h1>فهرست کاربران</h1>
 
     @if (role === 'admin') {
-      <button class="add-user-btn">
-        اضافه کردن کاربر جدید
-      </button>
+      <a routerLink="/users/new">
+        <button class="add-user-btn">
+          اضافه کردن کاربر جدید
+        </button>
+      </a>
     }
   </div>
 

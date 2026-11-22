@@ -1,0 +1,81 @@
+<div class="add-form-container">
+  <form #userForm="ngForm" autocomplete="off">
+
+    <div>
+      <h1>شناسه کاربر: {{ newUser.id }}</h1>
+    </div>
+
+    <div>
+      <label>نام و نام خانوادگی</label>
+      <input
+        type="text"
+        [(ngModel)]="newUser.name"
+        name="name"
+        autocomplete="off"
+        required>
+    </div>
+
+    <div>
+      <label>ایمیل</label>
+      <input
+        type="email"
+        [(ngModel)]="newUser.email"
+        name="email"
+        autocomplete="off"
+        required>
+    </div>
+
+    <div>
+      <label>پسورد</label>
+      <input
+        type="password"
+        [(ngModel)]="newUser.password"
+        name="password"
+        autocomplete="new-password"
+        required>
+    </div>
+
+    <div>
+      <label>نقش</label>
+      <select [(ngModel)]="newUser.role" name="role" required>
+        <option value="user">کاربر عادی</option>
+        <option value="operator">اپراتور</option>
+        <option value="admin">مدیر سیستم</option>
+      </select>
+    </div>
+
+    <div>
+      <label>حقوق</label>
+      <input
+        type="number"
+        [(ngModel)]="newUser.salary"
+        name="salary"
+        required>
+    </div>
+
+    <div>
+      <label>سمت شغلی</label>
+      <input
+        type="text"
+        [(ngModel)]="newUser.position"
+        name="position"
+        required>
+    </div>
+
+    <div>
+      <label>وضعیت</label>
+      <select [(ngModel)]="newUser.status" name="status" required>
+        <option [ngValue]="true">فعال</option>
+        <option [ngValue]="false">غیرفعال</option>
+      </select>
+    </div>
+
+    <button
+      type="button"
+      (click)="saveUser()"
+      [disabled]="userForm.invalid">
+      ذخیره
+    </button>
+
+  </form>
+</div>

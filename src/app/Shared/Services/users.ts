@@ -45,4 +45,8 @@ export class Users {
       this.users[index] = { ...updatedUser };
     }
   }
+
+  addUser(newUser : IUser){
+    this.users.push(newUser);
+  }
 }
