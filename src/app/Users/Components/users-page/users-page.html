@@ -1,2 +1,2 @@
-<app-users-header [role]="userRole" (selectedRole)="onRoleSelected($event)"></app-users-header>
-<app-user-table [users]="usersList" [role]="userRole" [selectedRole]="selectedRole"></app-user-table>
+<app-users-header [role]="userRole" (selectedRole)="onRoleSelected($event)" (searchChanged)="onSearchChanged($event)"></app-users-header>
+<app-user-table [users]="usersList" [role]="userRole" [selectedRole]="selectedRole" [searchText]="searchText" (deletedId)="deleteUser($event)"></app-user-table>

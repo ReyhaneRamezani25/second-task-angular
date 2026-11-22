@@ -18,7 +18,25 @@
         @for(user of filteredUsers; track user.id) {
           <tr>
             @if(role!=='user'){
-            <td>حذف و ادیت</td>
+            <td>
+              <div class="action-container">
+                <a [routerLink]="['/users/detail',user.id]">
+                  <span class="eye-spn">
+                    <img src="assets/eye.png" alt="eye">
+                  </span>
+                </a>
+                @if(role==='admin'){
+                  <a [routerLink]="['/users/edit',user.id]">
+                    <span class="edit-spn">
+                      <img src="assets/edit.png" alt="edit">
+                    </span>
+                 </a>
+                <span class="trash-spn" (click)="sendDeletedId(user.id)">
+                  <img src="assets/trash.png" alt="delete">
+                </span>
+              }
+              </div>
+            </td>
             }
             <td>
                 <span [class.active-status]="user.status" [class.inactive-status]="!user.status">

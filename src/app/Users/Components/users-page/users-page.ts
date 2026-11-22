@@ -13,12 +13,22 @@ export class UsersPage {
   userRole: string = '';
   usersList : IUser[] = [];
   selectedRole: string = 'all';
+  searchText: string = '';
+
   constructor(private userService: Users) {
     this.userRole = this.userService.currentUser?.role ?? '';
     this.usersList = this.userService.users;
   }
   onRoleSelected(role: string) {
     this.selectedRole = role;
+  }
+
+  onSearchChanged(value: string) {
+    this.searchText = value;
+  }
+
+  deleteUser(id: number) {
+    this.userService.deleteUser(id);
   }
 
 }

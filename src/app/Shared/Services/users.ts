@@ -5,7 +5,11 @@ import { IUser } from '../Models/user';
 })
 export class Users {
   constructor() {
-    console.log('Users Service Created');
+  const savedUser = localStorage.getItem('currentUser');
+
+  if (savedUser) {
+    this.currentUser = JSON.parse(savedUser);
+    }
   }
 
   users: IUser[] = [
@@ -22,4 +26,23 @@ export class Users {
   ];
 
   currentUser: IUser | null = null;
+
+  deleteUser(id: number) {
+    const index = this.users.findIndex(user => user.id === id);
+
+    if (index === -1) return;
+
+    this.users.splice(index, 1);
+
+    this.users.forEach((user, index) => {
+      user.id = index + 1;
+    });
+  }
+
+  updateUser(updatedUser : IUser){
+    const index = this.users.findIndex(u => u.id === updatedUser.id);
+    if(index != -1){
+      this.users[index] = { ...updatedUser };
+    }
+  }
 }

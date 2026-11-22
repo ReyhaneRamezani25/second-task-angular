@@ -1,0 +1,15 @@
+@if (user) {
+  <div class="user-detail">
+    <h2>اطلاعات کاربر</h2>
+
+    <p><strong>:شناسه</strong> {{ user.id }}</p>
+    <p><strong>:نام و نام خانوادگی</strong> {{ user.name }}</p>
+    <p><strong>:ایمیل</strong> {{ user.email }}</p>
+    <p><strong>:نقش</strong> {{ user.role }}</p>
+    <p><strong>:وضعیت</strong> {{ user.status ? 'فعال' : 'غیرفعال' }}</p>
+    <p><strong>:حقوق</strong> {{ user.salary }}</p>
+    <p><strong>: سمت شغلی</strong> {{ user.position }}</p>
+  </div>
+} @else {
+  <p>کاربری با این شناسه پیدا نشد.</p>
+}

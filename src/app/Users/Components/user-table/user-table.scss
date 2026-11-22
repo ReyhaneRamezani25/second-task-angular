@@ -92,6 +92,59 @@
   }
 }
 
+.action-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  span {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.eye-spn {
+    background-color: #ede9fe;
+
+    &:hover {
+      background-color: #ddd6fe;
+    }
+  }
+
+  .edit-spn {
+    background-color: #dbeafe;
+
+    &:hover {
+      background-color: #bfdbfe;
+    }
+  }
+
+  .trash-spn {
+    background-color: #fee2e2;
+
+    &:hover {
+      background-color: #fecaca;
+    }
+  }
+
+
 @media (max-width: 768px) {
   .table-container {
     width: 95%;

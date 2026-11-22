@@ -32,6 +32,7 @@ export class LoginForm {
         this.currentUser = user;  
         this.resultAfterCheck = "";
         this.userService.currentUser = user;
+        localStorage.setItem('currentUser', JSON.stringify(user));
         this.router.navigate(['/users']);
       }
       else if (user && !user.status){

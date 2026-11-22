@@ -1,0 +1,48 @@
+@if(user){
+    <div class="edit-form-container">
+        <form>
+            <div>
+                <h1>  شناسه کاربر:{{user.id}}</h1>
+            </div>
+            <div>
+                <label>نام و نام خانوادگی</label>
+                <input type="text" [(ngModel)]="user.name" name="name">
+            </div>
+            <div>
+                <label>ایمیل</label>
+                <input type="email" [(ngModel)]="user.email" name="email">
+            </div>
+            <div>
+                <label>پسورد</label>
+                <input type="text" [(ngModel)]="user.password" name="password">
+            </div>
+            <div>
+                <label>نقش</label>
+                <select [(ngModel)]="user.role" name="role">
+                    <option value="user">کاربر عادی</option>
+                    <option value="operator">اپراتور</option>
+                    <option value="admin">مدیر سیستم</option>
+                </select>
+            </div>
+            <div>
+                <label>حقوق</label>
+                <input type="number" [(ngModel)]="user.salary" name="salary">
+            </div>
+            <div>
+                <label>سمت شغلی</label>
+                <input type="text" [(ngModel)]="user.salary" name="position">
+            </div>
+            <div>
+                <label>وضغیت</label>
+                <select [(ngModel)]="user.status" name="status">
+                    <option [ngValue]="true">فعال</option>
+                    <option [ngValue]="false">غیرفعال</option>
+                </select>
+            </div>
+            <button type="button" (click)="saveUser()">
+             ذخیره
+            </button>
+        </form>
+
+    </div>
+}
