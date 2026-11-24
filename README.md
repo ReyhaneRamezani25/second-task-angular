@@ -10,6 +10,7 @@
 - جلوگیری از ورود کاربران غیرفعال (`status: false`).
 - استفاده از `Auth Guard` برای محافظت از مسیر `/users`.
 - جلوگیری از دسترسی کاربران احراز هویت نشده به صفحات محافظت شده.
+<img width="1920" height="897" alt="Screenshot (4026)" src="https://github.com/user-attachments/assets/8c4ee8fc-7e76-4e4f-b335-77bbed9a507d" />
 
 ### ۲. مدیریت سطح دسترسی 
 
