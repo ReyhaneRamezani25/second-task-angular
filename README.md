@@ -1,59 +1,121 @@
-# UserManagement
+# سیستم مدیریت کاربران (User Management System)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.43.
+این پروژه با استفاده از **Angular** توسعه داده شده و هدف آن تمرین و پیاده‌سازی مفاهیم اصلی Angular از جمله سرویس‌ها، ارتباط بین کامپوننت‌ها، مسیریابی، احراز هویت و مدیریت سطح دسترسی کاربران است.
 
-## Development server
+## قابلیت‌های پروژه (Features)
 
-To start a local development server, run:
+### ۱. احراز هویت (Authentication)
 
-```bash
-ng serve
+- امکان ورود کاربران با استفاده از ایمیل و رمز عبور تعریف‌شده در سیستم.
+- جلوگیری از ورود کاربران غیرفعال (`status: false`).
+- استفاده از `Auth Guard` برای محافظت از مسیر `/users`.
+- جلوگیری از دسترسی کاربران احراز هویت‌نشده به صفحات محافظت‌شده.
+
+### ۲. مدیریت سطح دسترسی (Role-Based Access Control)
+
+در این پروژه سه نقش کاربری تعریف شده است:
+
+**مدیر سیستم (Admin)**
+
+- مشاهده لیست تمام کاربران.
+- اضافه کردن کاربر جدید.
+- ویرایش اطلاعات کاربران.
+- حذف کاربران.
+- مشاهده جزئیات کاربران.
+
+**اپراتور (Operator)**
+
+- مشاهده لیست کاربران.
+- مشاهده جزئیات کاربران.
+- عدم دسترسی به عملیات اضافه کردن، ویرایش و حذف کاربران.
+
+**کاربر عادی (User)**
+
+- مشاهده لیست کاربران.
+- عدم دسترسی به عملیات مدیریتی و مشاهده جزئیات کاربران.
+
+### ۳. مدیریت کاربران (User Management)
+
+- اضافه کردن کاربران جدید از طریق یک صفحه مجزا.
+- ویرایش اطلاعات کاربران.
+- حذف کاربران از لیست.
+- مشاهده اطلاعات و جزئیات کامل هر کاربر.
+- انتقال خودکار به صفحه لیست کاربران پس از ذخیره اطلاعات کاربر جدید یا ویرایش اطلاعات.
+
+### ۴. جستجو و فیلتر کاربران (Search & Filtering)
+
+- جستجوی کاربران بر اساس نام.
+- جستجو بر اساس ایمیل.
+- جستجو بر اساس شناسه کاربر (`ID`).
+- جستجو بر اساس نقش کاربر (`Role`).
+- جستجو بر اساس وضعیت حساب کاربری (فعال یا غیرفعال).
+- فیلتر کردن کاربران بر اساس نقش.
+
+## کامپوننت‌های پروژه (Components)
+
+در این پروژه از کامپوننت‌های زیر استفاده شده است:
+
+- `Login` – مدیریت فرآیند ورود کاربران به سیستم.
+- `UsersPage` – کامپوننت والد صفحه مدیریت کاربران.
+- `UsersHeader` – شامل بخش جستجو و فیلتر کاربران.
+- `UserTable` – نمایش لیست کاربران و عملیات قابل انجام روی آن‌ها.
+- `AddUser` – مدیریت فرم اضافه کردن کاربر جدید.
+- `UserEdit` – امکان ویرایش اطلاعات کاربران.
+- `UserDetail` – نمایش جزئیات کامل اطلاعات یک کاربر.
+
+## ارتباط بین کامپوننت‌ها (Component Communication)
+
+برای تمرین ارتباط بین کامپوننت‌های والد و فرزند، صفحه لیست کاربران به صورت زیر طراحی شده است:
+
+- `UsersPage` به عنوان کامپوننت والد.
+- `UsersHeader` به عنوان یکی از کامپوننت‌های فرزند.
+- `UserTable` به عنوان کامپوننت فرزند دیگر.
+
+برای انتقال داده بین کامپوننت‌ها از دکوریتورهای `@Input()` و `@Output()` در Angular استفاده شده است.
+
+## محافظت از مسیرها (Route Guards)
+
+برای کنترل دسترسی به صفحات مختلف و جلوگیری از ورود غیرمجاز، از Route Guard استفاده شده است.
+
+مسیرهای محافظت‌شده پروژه:
+
+- `/users` – صفحه لیست کاربران؛ فقط کاربران واردشده به سیستم امکان دسترسی دارند.
+- `/users/new` – صفحه اضافه کردن کاربر جدید.
+- `/users/edit/:id` – صفحه ویرایش اطلاعات کاربر بر اساس شناسه.
+- `/users/detail/:id` – صفحه مشاهده جزئیات کاربر بر اساس شناسه.
+
+گاردهای مربوط به این مسیرها در پوشه `Shared` قرار دارند.
+
+## اطلاعات اولیه کاربران (Initial Users Data)
+
+در این پروژه یک آرایه از کاربران به صورت پیش‌فرض در سرویس کاربران تعریف شده است.
+
+اطلاعات هر کاربر شامل موارد زیر است:
+
+- `id`: شناسه منحصر به فرد کاربر
+- `name`: نام و نام خانوادگی
+- `email`: ایمیل کاربر
+- `password`: رمز عبور
+- `role`: نقش کاربر در سیستم (`admin`، `operator` یا `user`)
+- `status`: وضعیت حساب کاربری (`true` برای فعال و `false` برای غیرفعال)
+- `salary`: حقوق کاربر
+- `position`: عنوان شغلی کاربر
+
+### آرایه کاربران پیش‌فرض
+
+```typescript
+users: IUser[] = [
+  { id: 1, name: 'رضا احمدی', email: 'reza.user@example.com', password: 'User@123', role: 'user', status: true, salary: 45000000, position: 'Frontend Developer' },
+  { id: 2, name: 'ماهان رضایی', email: 'mahan.operator@example.com', password: 'Operator@123', role: 'operator', status: true, salary: 35000000, position: 'System Operator' },
+  { id: 3, name: 'سارا رمضانی', email: 'sara.admin@example.com', password: 'Admin@123', role: 'admin', status: true, salary: 65000000, position: 'System Administrator' },
+  { id: 4, name: 'سارا قربانی', email: 'sara.user@example.com', password: 'User@321', role: 'user', status: true, salary: 40000000, position: 'UI/UX Designer' },
+  { id: 5, name: 'حسین محمدی', email: 'hossein.operator@example.com', password: 'Operator@789', role: 'operator', status: false, salary: 32000000, position: 'Technical Support Specialist' },
+  { id: 6, name: 'مینا اکبری', email: 'mina.user@example.com', password: 'User@456', role: 'user', status: true, salary: 55000000, position: 'Backend Developer' },
+  { id: 7, name: 'علی علوی', email: 'ali.admin@example.com', password: 'Admin@456', role: 'admin', status: true, salary: 70000000, position: 'Senior System Administrator' },
+  { id: 8, name: 'ندا چراغی', email: 'neda.operator@example.com', password: 'Operator@456', role: 'operator', status: true, salary: 38000000, position: 'Maintenance Operator' },
+  { id: 9, name: 'نیما فلاح', email: 'nima.user@example.com', password: 'User@789', role: 'user', status: false, salary: 50000000, position: 'Database Developer' },
+  { id: 10, name: 'امیر نیکزاد', email: 'amir.user@example.com', password: 'User@654', role: 'user', status: true, salary: 42000000, position: 'QA Engineer' }
+];
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**نکته:** کاربرانی که مقدار `status` آن‌ها `false` است، غیرفعال هستند و امکان ورود به سیستم را ندارند.
