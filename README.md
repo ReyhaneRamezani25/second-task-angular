@@ -1,4 +1,4 @@
-# سیستم مدیریت کاربران
+<img width="1920" height="910" alt="Screenshot (4028)" src="https://github.com/user-attachments/assets/a3d63f15-6aeb-4b1d-afe9-2f014e777330" /># سیستم مدیریت کاربران
 
 این پروژه با استفاده از **Angular** توسعه داده شده و هدف آن تمرین و پیاده سازی مفاهیم اصلی Angular از جمله سرویس ها، ارتباط بین کامپوننت ها، مسیریابی، احراز هویت و مدیریت سطح دسترسی کاربران است.
 
@@ -23,17 +23,20 @@
 - ویرایش اطلاعات کاربران.
 - حذف کاربران.
 - مشاهده جزئیات کاربران.
+<img width="1920" height="948" alt="Screenshot (4027)" src="https://github.com/user-attachments/assets/b2c4c82e-5516-443a-8f1f-86ba1a2166c2" />
 
 **اپراتور (Operator)**
 
 - مشاهده لیست کاربران.
 - مشاهده جزئیات کاربران.
 - عدم دسترسی به عملیات اضافه کردن، ویرایش و حذف کاربران.
+<img width="1920" height="968" alt="Screenshot (4029)" src="https://github.com/user-attachments/assets/f1600202-ab86-4a76-a4c8-2dac8ed676f6" />
 
 **کاربر عادی (User)**
 
 - مشاهده لیست کاربران.
 - عدم دسترسی به عملیات مدیریتی و مشاهده جزئیات کاربران.
+<img width="1920" height="910" alt="Screenshot (4028)" src="https://github.com/user-attachments/assets/7789b46a-5648-41da-b0df-dd6d118e1eff" />
 
 ### ۳. مدیریت کاربران 
 
@@ -42,6 +45,9 @@
 - حذف کاربران از لیست که فقط مدیر سیستم امکان آن را دارد.
 - مشاهده اطلاعات و جزئیات کامل هر کاربر که هم اپراتور هم ادمین امکان آن را دارند.
 - انتقال خودکار به صفحه لیست کاربران پس از ذخیره اطلاعات کاربر جدید یا ویرایش اطلاعات.
+<img width="1920" height="979" alt="Screenshot (4032)" src="https://github.com/user-attachments/assets/cf75bbcd-ed89-4dac-8f5b-1cb43cd77f78" />
+<img width="1920" height="969" alt="Screenshot (4031)" src="https://github.com/user-attachments/assets/33991bfd-5b35-4190-9be3-86b1524debb0" />
+<img width="1920" height="980" alt="Screenshot (4030)" src="https://github.com/user-attachments/assets/6ae799f9-89a7-4b9d-b8cc-25d348e6c477" />
 
 ### ۴. جستجو و فیلتر کاربران 
 
@@ -51,6 +57,9 @@
 - جستجو بر اساس نقش کاربر (`Role`).
 - جستجو بر اساس وضعیت حساب کاربری (فعال یا غیرفعال).
 - فیلتر کردن کاربران بر اساس نقش.
+<img width="1920" height="960" alt="Screenshot (4035)" src="https://github.com/user-attachments/assets/2de827aa-e05f-4201-bdf8-05719b401443" />
+<img width="1920" height="921" alt="Screenshot (4034)" src="https://github.com/user-attachments/assets/dc93d83c-a131-494e-b0d7-e6d6405d7c15" />
+
 
 ## کامپوننت‌های پروژه 
 
